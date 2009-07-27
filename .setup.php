@@ -5,7 +5,8 @@ Database::connect();
 session_start();
 
 
-Root::i()->setVar("wroot", "/myexcel/");
+//здесь задаётся веб-путь к phpMyExcel (по умолчанию это корень "/")
+Root::i()->setVar("wroot", "/");
 
 
 if(file_exists(dirname(__FILE__)."/_local_settings.php"))

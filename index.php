@@ -17,10 +17,10 @@ class CCC extends Controller{
         
         
         echo '<head><title>phpMyExcel Таблица '.get_current_sheet().'</title></head>';
-        echo '<script src="/js/jquery-1.3.2.min.js"></script>';
-        echo '<script src="/js/short_ajax.js"></script>';
-        echo '<script src="js/myexcel.js"></script>';
-        echo '<LINK REL="stylesheet" HREF="style.css" TYPE="text/css">';
+        echo '<script src="'.Root::i()->getVar('wroot').'js/jquery-1.3.2.min.js"></script>';
+        echo '<script src="'.Root::i()->getVar('wroot').'js/short_ajax.js"></script>';
+        echo '<script src="'.Root::i()->getVar('wroot').'js/myexcel.js"></script>';
+        echo '<LINK REL="stylesheet" HREF="'.Root::i()->getVar('wroot').'style.css" TYPE="text/css">';
         echo "<input type='hidden' name='sheet' value='$sheet'>";
         
         echo "<div class='toolbar'>";
@@ -53,7 +53,7 @@ class CCC extends Controller{
             for($col = 0; $col < $max_cols; $col++){
                 $cellId = chr(0x41 + $col).$row; 
                 echo "<td onclick='onCellClick(\"$cellId\")' width=100 class='cell'>";
-                echo "<form id='form_{$cellId}' action='/myexcel/?Act=saveCell&sheet={$sheet}&cell_id={$cellId}' method='POST' onSubmit='return false;' style='margin:0; padding:0;'>";
+                echo "<form id='form_{$cellId}' action='".Root::i()->getVar('wroot')."?Act=saveCell&sheet={$sheet}&cell_id={$cellId}' method='POST' onSubmit='return false;' style='margin:0; padding:0;'>";
                 $input_source = preg_replace("/\"/", "&quot;", MyExcel::getCellSource($sheet, $cellId)); 
                 echo "<input name='content' class='cellinput' title='$cellId' type='text' value=\"".$input_source."\" id='$cellId' onkeypress='inputKeyPress(this, event)'>";
                 echo "</form>";
