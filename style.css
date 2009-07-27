@@ -1,0 +1,37 @@
+.toolbar{
+    background-color: #dddddd;
+    padding: 3px;
+}
+
+body{
+    padding:0;
+    margin:0;
+}
+
+form{
+    padding:0;
+    margin:0;
+}
+
+input.cellinput{
+    display:none;
+    position: absolute;
+    font-family:Courier new;
+    font-size:18px;
+    color: brown;    
+    font-weight:bold;
+    padding:3px;
+}
+
+
+table#excel{
+    margin: 0 auto;
+    padding: 0;
+    border-collapse: collapse;
+}
+
+table#excel td.cell{
+    padding: 2px;
+    border: 1px solid gray;
+}
+
