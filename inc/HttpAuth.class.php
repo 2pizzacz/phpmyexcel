@@ -1,19 +1,21 @@
 <?
 
 class HttpAuth{
+	
+	//массив пользователей перегружается в зависмости от контекста, необходимыми парами логин-пароль
+	static public $users = array(
+		'admin' => 'adminpass',
+		'someone' => 'somepass'
+		);
+
 	public $authorized = false;
 	
-	private $dispatchers = array(
-		'admin' => 'admin',
-		'someone' => 'somepass'
-	);
-
 	public function isAuthorized(){
 		if(empty($_SERVER['PHP_AUTH_USER'])) return false;
 		if(empty($_SERVER['PHP_AUTH_PW'])) return false;
 		
-		if(!array_key_exists ($_SERVER['PHP_AUTH_USER'], $this->dispatchers)) return false;
-		if($this->dispatchers[$_SERVER['PHP_AUTH_USER']] !== $_SERVER['PHP_AUTH_PW']) return false;
+		if(!array_key_exists ($_SERVER['PHP_AUTH_USER'], self::$users)) return false;
+		if(self::$users[$_SERVER['PHP_AUTH_USER']] !== $_SERVER['PHP_AUTH_PW']) return false;
 		return true;
 	}
 
