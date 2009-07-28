@@ -21,18 +21,19 @@ class CCC extends Controller{
         echo '<script src="'.Root::i()->getVar('wroot').'js/short_ajax.js"></script>';
         echo '<script src="'.Root::i()->getVar('wroot').'js/myexcel.js"></script>';
         echo '<LINK REL="stylesheet" HREF="'.Root::i()->getVar('wroot').'style.css" TYPE="text/css">';
-        echo "<input type='hidden' name='sheet' value='$sheet'>";
+        //echo "<input type='hidden' name='sheet' value='$sheet'>";
         
         echo "<div class='toolbar'>";
-        echo "<form method='GET'>";
-            echo "таблица: <input type='text' name='sheet' value='".get_current_sheet()."'>";
-            echo " столбцов: <input type='text' name='cols' value='$max_cols' size=2>";
-            echo " строк: <input type='text' name='rows' value='$max_rows' size=2>";
-            echo " <input type='submit' value='Открыть'>";
-            foreach(MyExcel::getLastSheets(10) as $one){
-                echo "&nbsp;<a style='font-size:10px' href='?sheet=$one'>$one</a>";
-            }
-        echo "</form>";
+			echo "<div style='float:right'><a href='phpmyexcel.zip'>исходники</a></div>";
+			echo "<form method='GET'>";
+				echo "таблица: <input type='text' name='sheet' value='".get_current_sheet()."'>";
+				echo " столбцов: <input type='text' name='cols' value='$max_cols' size=2>";
+				echo " строк: <input type='text' name='rows' value='$max_rows' size=2>";
+				echo " <input type='submit' value='Открыть'>";
+				foreach(MyExcel::getLastSheets(10) as $one){
+					echo "&nbsp;<a style='font-size:10px' href='?sheet=$one'>$one</a>";
+				}
+			echo "</form>";
         echo "</div>";
         
         echo "<table id='excel'>";
