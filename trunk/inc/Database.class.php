@@ -1,22 +1,19 @@
 <?
 
 class Database{
+	static public $DB_HOST, $DB_DATABASENAME, $DB_USER, $DB_PASS;
+
     static private $connection = null;
     static private $last_result = null;
 	static public function connect(){
         if(!is_null(self::$connection)) return self::$connection;
 		
-		if(strpos ($_SERVER['HTTP_HOST'], '.ru'))
-			$mysql = parse_ini_file(dirname(__FILE__)."/../mysql.ini");
-		else
-			$mysql = parse_ini_file(dirname(__FILE__)."/../mysql_local.ini");
-
-		$r = mysql_connect($mysql['host'], $mysql['name'], $mysql['pass']);
+		$r = mysql_connect(self::$DB_HOST, self::$DB_USER, self::$DB_PASS);
 		
 		if (!$r) 
 			throw new Exception("Невозможно соединиться с MySQL");
 
-		if(!mysql_select_db($mysql['database']))
+		if(!mysql_select_db(self::$DB_DATABASENAME))
 			throw new Exception(mysql_error());
             
 
