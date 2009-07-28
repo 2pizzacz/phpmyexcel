@@ -24,7 +24,7 @@ class CCC extends Controller{
         //echo "<input type='hidden' name='sheet' value='$sheet'>";
         
         echo "<div class='toolbar'>";
-			echo "<div style='float:right'><a href='phpmyexcel.zip'>исходники</a></div>";
+			echo "<div style='float:right'><a href='phpmyexcel.zip'>исходники</a> <a href='http://code.google.com/p/phpmyexcel/'>SVN</a></div>";
 			echo "<form method='GET'>";
 				echo "таблица: <input type='text' name='sheet' value='".get_current_sheet()."'>";
 				echo " столбцов: <input type='text' name='cols' value='$max_cols' size=2>";
