@@ -3,10 +3,10 @@
 class HttpAuth{
 	
 	//массив пользователей перегружается в зависмости от контекста, необходимыми парами логин-пароль
-	static public $users = array(
+	static public $users /*= array(
 		'admin' => 'adminpass',
 		'someone' => 'somepass'
-		);
+		)*/;
 
 	public $authorized = false;
 	
