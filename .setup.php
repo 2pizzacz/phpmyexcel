@@ -22,6 +22,6 @@ Database::connect();
 session_start();
 
 
-/*$auth = new HttpAuth();
-$auth->authorize();*/
+$auth = new HttpAuth();
+$auth->authorize();
 ?>

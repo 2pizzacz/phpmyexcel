@@ -11,6 +11,7 @@ class HttpAuth{
 	public $authorized = false;
 	
 	public function isAuthorized(){
+		if(empty(self::$users)) return true;
 		if(empty($_SERVER['PHP_AUTH_USER'])) return false;
 		if(empty($_SERVER['PHP_AUTH_PW'])) return false;
 		
