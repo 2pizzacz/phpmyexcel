@@ -9,6 +9,15 @@ session_start();
 Root::i()->setVar("wroot", "/");
 
 
+
+
+Database::$DB_HOST = 'localhost';
+Database::$DB_DATABASENAME = 'test';
+Database::$DB_USER = 'limited';
+Database::$DB_PASS = 'limited';
+
+
+
 if(file_exists(dirname(__FILE__)."/_local_settings.php"))
 	include(dirname(__FILE__)."/_local_settings.php");
 
