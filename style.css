@@ -13,7 +13,7 @@ form{
     margin:0;
 }
 
-input.cellinput{
+.cellinput{
     display:none;
     position: absolute;
     font-family:Courier new;
