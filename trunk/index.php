@@ -12,8 +12,8 @@ function get_current_sheet(){
 class CCC extends Controller{
     function index(){
         $sheet = get_current_sheet();
-        $max_rows = $this->_get("rows", 10);
-        $max_cols = $this->_get("cols", 5);
+        $max_rows = $this->_get("rows", 20);
+        $max_cols = $this->_get("cols", 10);
         
         
         echo '<head><title>phpMyExcel Таблица '.get_current_sheet().'</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
