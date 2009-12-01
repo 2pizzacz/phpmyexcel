@@ -73,7 +73,7 @@ class CCC extends Controller{
         $cell_id = $this->_get("cell_id");
         $new_content = $this->_post("content");
         $new_content = stripslashes($new_content);
-        $new_content = iconv('utf-8','windows-1251',$new_content);
+        //$new_content = iconv('utf-8','windows-1251',$new_content);
         $new_content = trim($new_content);
         
         MyExcel::setCellSource($sheet, $cell_id, $new_content);
