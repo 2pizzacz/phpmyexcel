@@ -10,7 +10,7 @@ abstract class Controller{
 	public function _get($varname, $default_value = false, $strip_tags = true){
 		if(isset($_GET[$varname])){
 			$ret = $strip_tags ? strip_tags($_GET[$varname]) : $_GET[$varname];
-			if($pattern && !preg_match($pattern, $ret)) throw new Exception ("Недопустимый формат аргумента $varname=".$_GET[$varname]);
+			//if($pattern && !preg_match($pattern, $ret)) throw new Exception ("Недопустимый формат аргумента $varname=".$_GET[$varname]);
             return $ret;
         }
 		else
